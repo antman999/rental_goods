@@ -1,17 +1,16 @@
 import React from 'react'
-import './collection.scss'
+import './collections.scss'
 const Collections=(props)=> {
   return (
 		<div className='collection-item'>
 			<div
 				className='image'
-				style={{ backgroundImage: `url(${props.imageUrl})` }}>
+				style={{ backgroundImage:`url(${props.imageUrl})` }} />
 				<div className='collection-footer'>
-          <span className='name'>{props.name}</span>
-          <span className='price'>{props.price}</span>
+					<span className='name'>{props.name}</span>
+					<span className='price'>{props.price}</span>
 				</div>
 			</div>
-		</div>
 	);
 }
 export default Collections
