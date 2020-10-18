@@ -3,6 +3,7 @@ import Button from '../custom-button/Button';
 import FormInput from '../form-input/FormInput';
 import './signin.scss'
 
+import {signInWithGoogle} from '../../firebase/firebase.utils'
 
 class Signin extends Component {
 	state = {
@@ -21,35 +22,38 @@ class Signin extends Component {
 
 	render() {
     return (
-      
 			<div className='sign-in'>
-				<h2>Signin</h2>
+				<h2>Sign-in</h2>
 				<span>Use Email and password</span>
 				<form onSubmit={this.handleSubmit}>
 					<FormInput
 						type='email'
-            name='email'
-            label='Email'
+						name='email'
+						label='Email'
 						value={this.state.email}
 						handleChange={this.handleChange}
 						required
 					/>
-		
 
 					<FormInput
 						name='password'
-            type='password'
-            label='Password'
+						type='password'
+						label='Password'
 						value={this.state.password}
 						required
 						type='password'
 						handleChange={this.handleChange}
 					/>
-					
-
-					<Button type='submit' value='submit'>
+          <div className='buttons'>
+            	<Button type='submit' value='submit'>
 						Sign in
 					</Button>
+
+          <Button onClick={signInWithGoogle}value='submit' isGoogleSignIn>
+						Sign in using Google
+					</Button>
+         </div>
+				
 				</form>
 			</div>
 		);
