@@ -8,4 +8,5 @@ export default combineReducers({
   user: userReducer
 })
 
+
 ///He we are splitting our reducers into more organized structure this is gonna be the main one that contain all reducers and exports them 
