@@ -3,14 +3,16 @@ import Collections from '../collections/Collections'
 
 import './preview.scss' 
 
-const Preview = (props) => {
+const Preview = ({ title, items }) => {
   return (
 		<div className='collection-preview'>
-			<h2 className='title'>{props.title.toUpperCase()}</h2>
+			<h1 className='title'>{title.toUpperCase()}</h1>
 			<div className='preview'>
-				{props.items.map(item => (
-					<Collections key={item.id}name={item.name} imageUrl={item.imageUrl} price={item.price} />
-				))}
+				{items
+					.filter((item, idx) => idx < 4)
+					.map(({ id, ...otherItemProps }) => (
+						<Collections key={id} {...otherItemProps} />
+					))}
 			</div>
 		</div>
 	);
