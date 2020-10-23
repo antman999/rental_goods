@@ -4,6 +4,8 @@ import './cartIcon.scss'
 import { connect } from 'react-redux'
 import { cartAction } from "../../redux/cart/cartAction";
 
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
+
 const CartIcon = ({cartAction, itemCount}) => {
   return (
     <div className='cart-icon' onClick={cartAction}>
@@ -18,6 +20,6 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const mapStateToProps = state => ({
-  itemCount: state.cart.cartItems.reduce((aq, cartItem)=>aq + cartItem.quantity,0)
+  itemCount: selectCartItemsCount(state)
 })
 export default connect (mapStateToProps,mapDispatchToProps)(CartIcon)
