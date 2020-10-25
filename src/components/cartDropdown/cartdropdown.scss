@@ -18,6 +18,14 @@
     overflow: scroll;
   }
 
+  .empty-message {
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    text-align: center;
+  }
+
   button {
     margin-top: auto;
   }
