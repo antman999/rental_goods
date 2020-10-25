@@ -7,7 +7,9 @@ import './cartdropdown.scss'
 
 import { selectCartItems } from "../../redux/cart/cart.selectors";
 
-const CartDropDown = ({cartItems , history}) => {
+import { cartAction} from "../../redux/cart/cartAction";
+
+const CartDropDown = ({cartItems , history, dispatch}) => {
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
@@ -16,12 +18,16 @@ const CartDropDown = ({cartItems , history}) => {
          : (<span className='empty-message'>  Your Cart is empty  </span> )
         }
       </div> 
-      <Button onClick={()=>history.push('/checkout')}>Checkout</Button>
+      <Button onClick={() => {
+        
+        history.push('/checkout')
+        dispatch(cartAction())
+      }}>Checkout</Button>
     </div>
   )
 }
 const mapStateToProps = state => ({
- cartItems: selectCartItems(state)
-})
+	cartItems: selectCartItems(state),
+});
  
 export default withRouter(connect(mapStateToProps)(CartDropDown))
