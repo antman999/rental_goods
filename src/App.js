@@ -9,7 +9,7 @@ import SignInSignUpPage from './pages/accoutPages/SignInSignUpPage';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { setCurrentUser } from "./redux/user/userAction";
-import Checkout from './pages/checkoutPage/Checkout';
+import Checkout from './pages/checkoutPage/CheckoutPage';
 
 class App extends Component {
 unsubscribeFromAuth = null 
