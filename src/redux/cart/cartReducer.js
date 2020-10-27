@@ -1,5 +1,5 @@
 import CartItem from "../../components/cart-item/CartItem";
-import { addItemToCart } from "./cart.utils";
+import { addItemToCart, removeItems } from "./cart.utils";
 
 const INITIAL_STATE = {
   hidden: true,
@@ -26,6 +26,12 @@ const INITIAL_STATE = {
 				...state,
 				cartItems: state.cartItems.filter(CartItem => CartItem.id !== action.payload.id),
 			};
+		
+		case 'MINUS':
+			return {
+				...state,
+				cartItems: removeItems(state.cartItems, action.payload)
+			}
 
 		default:
 			return state;
