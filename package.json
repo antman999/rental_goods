@@ -2,7 +2,8 @@
   "name": "rental_goods",
   "version": "0.1.0",
   "engines": {
-    "node": "13.13.0"
+    "node": "13.13.0",
+    "npm": "6.14.4"
   },
   "private": true,
   "dependencies": {

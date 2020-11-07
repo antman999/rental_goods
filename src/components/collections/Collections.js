@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '../../custom-button/Button';
+import Button from '../custom-button/Button';
 import { connect } from 'react-redux'
-import { addToCart } from "../../../redux/cart/cartAction";
+import { addToCart } from "../../redux/cart/cartAction";
 import './collections.scss'
 const Collections=({item,addToCart})=> {
   return (

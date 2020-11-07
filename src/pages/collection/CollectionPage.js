@@ -1,5 +1,5 @@
 import React from 'react'
-import Collections from '../../components/checkout-items/collections/Collections'
+import Collections from '../../components/collections/Collections'
 import './category.scss'
 import {selectCollection} from '../../redux/shop/shop.selectors'
 import {connect} from 'react-redux'
