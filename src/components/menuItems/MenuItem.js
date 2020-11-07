@@ -8,7 +8,7 @@ const MenuItem = props => {
 			<div>
 			<div className='content'>
         <h2 className='title'>{props.title}</h2>
-				<span className='subtitle'>View</span>
+				<span className='subtitle'>View me</span>
 			</div>
 		</div>
 		</div>
